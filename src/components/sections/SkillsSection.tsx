@@ -36,7 +36,7 @@ export function SkillsSection() {
             <div className="skill-panel-top"><span className="mono">category / {String(active+1).padStart(2,"0")}</span><span aria-hidden="true">✳</span></div>
             <h3>{category.title}</h3><p>{category.description}</p>
             <div className="skill-tags">{category.skills.map((skill) => <span key={skill}>{skill}</span>)}</div>
-            <div className="skill-note mono">// {category.note}</div>
+            <div className="skill-note mono">{"// "}{category.note}</div>
           </div>
         </div>
       </div>

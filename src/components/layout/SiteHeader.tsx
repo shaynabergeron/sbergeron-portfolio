@@ -1,23 +1,32 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import { ArrowUpRight, Menu, Moon, Sun, X } from "lucide-react";
 import { getNavigation, sections, sectionLink } from "@/config/site";
 import { profile } from "@/content/portfolio";
 
 const nav = getNavigation();
 
-export function SiteHeader() {
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
-  const [menuOpen, setMenuOpen] = useState(false);
+function subscribeToTheme(onChange: () => void) {
+  const observer = new MutationObserver(onChange);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  return () => observer.disconnect();
+}
 
-  useEffect(() => {
-    setTheme(document.documentElement.dataset.theme === "light" ? "light" : "dark");
-  }, []);
+function getTheme() {
+  return document.documentElement.dataset.theme === "light" ? "light" : "dark";
+}
+
+function getServerTheme() {
+  return "dark" as const;
+}
+
+export function SiteHeader() {
+  const theme = useSyncExternalStore(subscribeToTheme, getTheme, getServerTheme);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   function toggleTheme() {
     const next = theme === "dark" ? "light" : "dark";
-    setTheme(next);
     document.documentElement.dataset.theme = next;
     try { localStorage.setItem("shayna-theme", next); } catch { /* storage may be disabled */ }
   }
