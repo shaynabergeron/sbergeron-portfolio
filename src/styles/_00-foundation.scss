@@ -1,0 +1,136 @@
+/* From the original mockup, organized into a per-section Sass partial. */
+:root {
+  --bg:#101216;
+  --bg-2:#16191d;
+  --card:#1a1d21;
+  --card-2:#22262b;
+  --fg:#f6f5f0;
+  --muted:#adb0ad;
+  --line:#34383b;
+  --lime:#c8f36e;
+  --lime-text:#c8f36e;
+  --lilac:#b8a8f8;
+  --orange:#ffad8c;
+  --mint:#97ded3;
+  --shadow:0 25px 75px #03050762;
+  --radius:23px;
+  --max:1190px;
+  color-scheme:dark
+}
+html[data-theme=light] {
+  --bg:#f8f8f2;
+  --bg-2:#f0f1e9;
+  --card:#fff;
+  --card-2:#f1f2e9;
+  --fg:#191d1d;
+  --muted:#626865;
+  --line:#d9ddd5;
+  --lime:#a0c44c;
+  --lime-text:#4d6b15;
+  --lilac:#7664bb;
+  --orange:#d9784b;
+  --mint:#399c8d;
+  --shadow:0 25px 75px #27312b1b;
+  color-scheme:light
+}
+* {
+  box-sizing:border-box
+}
+html {
+  scroll-behavior:smooth
+}
+body {
+  margin:0;
+  min-width:320px;
+  font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:var(--bg);
+  color:var(--fg);
+  line-height:1.6;
+  transition:background .28s,color .28s
+}
+a {
+  color:inherit;
+  text-decoration:none
+}
+button,input,textarea {
+  font:inherit
+}
+button {
+  cursor:pointer
+}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible {
+  outline:3px solid var(--lime);
+  outline-offset:4px
+}
+::selection {
+  background:var(--lime);
+  color:#101216
+}
+.mono {
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace
+}
+.container {
+  width:min(calc(100% - 84px),var(--max));
+  margin:auto
+}
+.section {
+  padding:105px 0
+}
+.eyebrow {
+  display:flex;
+  align-items:center;
+  gap:11px;
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:750;
+  color:var(--lime)
+}
+.eyebrow:before {
+  content:"";
+  width:20px;
+  height:1px;
+  background:currentColor
+}
+.section-head {
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:32px;
+  margin-bottom:35px
+}
+.section-head h2,.about-copy h2,.contact-cta h2 {
+  letter-spacing:-2.7px;
+  font-weight:750;
+  line-height:1.08;
+  font-size:clamp(36px,5vw,61px);
+  margin:15px 0
+}
+.section-head>p {
+  max-width:365px;
+  color:var(--muted);
+  font-size:14px;
+  margin:0 0 7px
+}
+.muted {
+  color:var(--muted)
+}
+.arrow {
+  display:inline-block;
+  transition:transform .2s
+}
+.btn:hover .arrow,.text-link:hover .arrow {
+  transform:translate(3px,-3px)
+}
+.skip {
+  position:absolute;
+  left:-9999px;
+  top:12px;
+  background:var(--lime);
+  color:#101216;
+  padding:10px 20px;
+  z-index:100
+}
+.skip:focus {
+  left:12px
+}

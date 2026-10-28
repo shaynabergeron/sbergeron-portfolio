@@ -1,0 +1,92 @@
+/* From the original mockup, organized into a per-section Sass partial. */
+.header {
+  height:83px;
+  border-bottom:1px solid var(--line);
+  position:relative;
+  z-index:10;
+  backdrop-filter:blur(14px)
+}
+.header-inner {
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px
+}
+.brand {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+  font-size:19px;
+  letter-spacing:-1.1px;
+  white-space:nowrap
+}
+.brand-mark {
+  width:35px;
+  height:35px;
+  display:grid;
+  place-items:center;
+  background:var(--lime);
+  color:#101216;
+  border-radius:11px;
+  transform:rotate(-8deg);
+  font-weight:850
+}
+.brand small {
+  font-size:10px;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+  margin-left:4px;
+  color:var(--muted);
+  font-weight:600
+}
+.nav {
+  display:flex;
+  align-items:center;
+  gap:30px
+}
+.nav a {
+  font-size:12px;
+  color:var(--muted);
+  font-weight:650;
+  transition:color .2s
+}
+.nav a:hover,.nav a.active {
+  color:var(--fg)
+}
+.header-actions {
+  display:flex;
+  gap:10px;
+  align-items:center
+}
+.icon-btn {
+  border:1px solid var(--line);
+  color:var(--fg);
+  background:var(--card);
+  height:40px;
+  width:40px;
+  display:grid;
+  place-items:center;
+  border-radius:13px;
+  transition:transform .2s,border-color .2s
+}
+.icon-btn:hover {
+  transform:translateY(-2px);
+  border-color:var(--lime)
+}
+.icon-btn svg {
+  width:18px;
+  height:18px
+}
+.nav-cta {
+  font-size:12px;
+  padding:11px 17px;
+  border:1px solid var(--line);
+  background:transparent;
+  border-radius:13px;
+  font-weight:700
+}
+.nav-cta:hover {
+  border-color:var(--lime)
+}

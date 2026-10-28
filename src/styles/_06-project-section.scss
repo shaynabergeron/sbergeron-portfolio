@@ -1,0 +1,223 @@
+/* From the original mockup, organized into a per-section Sass partial. */
+.projects {
+  background:var(--bg)
+}
+.project-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:19px
+}
+.project-card {
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:var(--card);
+  overflow:hidden;
+  transition:transform .25s,border-color .25s,box-shadow .25s
+}
+.project-card:hover {
+  transform:translateY(-5px);
+  border-color:color-mix(in srgb,var(--lilac),var(--line) 65%);
+  box-shadow:var(--shadow)
+}
+.project-card.featured {
+  grid-row:span 2
+}
+.project-art {
+  height:178px;
+  display:grid;
+  place-items:center;
+  position:relative;
+  overflow:hidden
+}
+.featured .project-art {
+  height:293px
+}
+.project-art.doc {
+  background:linear-gradient(135deg,#d6e6bd 0%,#adca9a 100%)
+}
+.project-art.design {
+  background:linear-gradient(135deg,#ddd2f4,#aeb3ed)
+}
+.project-art.wizard {
+  background:linear-gradient(135deg,#f2cab4,#e3aa92)
+}
+.mini-doc {
+  background:#fbfff5;
+  width:169px;
+  height:235px;
+  border-radius:8px;
+  box-shadow:15px 17px 0 #607d5733,0 12px 40px #34652a26;
+  transform:rotate(-8deg);
+  padding:20px
+}
+.mini-doc:before {
+  content:"SB   /   DOCUMENT";
+  font:700 8px monospace;
+  color:#3f6242;
+  display:block;
+  padding-bottom:12px;
+  border-bottom:1px solid #c9d8c4
+}
+.mini-doc .line {
+  height:7px;
+  border-radius:2px;
+  background:#bfd2b9;
+  margin-top:11px;
+  width:100%
+}
+.mini-doc .line.short {
+  width:63%
+}
+.mini-doc .line.med {
+  width:82%
+}
+.mini-doc .info {
+  margin-top:20px;
+  background:#dff0d8;
+  border-radius:4px;
+  padding:10px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:5px
+}
+.mini-doc .info i {
+  height:5px;
+  background:#9ebd93;
+  display:block;
+  border-radius:3px
+}
+.doc-label {
+  position:absolute;
+  bottom:43px;
+  right:42px;
+  padding:9px 12px;
+  border-radius:9px;
+  background:#253a32;
+  color:#c8f36e;
+  transform:rotate(8deg);
+  font:800 11px monospace;
+  box-shadow:0 8px 14px #0003
+}
+.ui-demo {
+  width:76%;
+  max-width:360px;
+  padding:17px;
+  background:#f9f9ff;
+  border:1px solid #c1b9e5;
+  border-radius:12px;
+  box-shadow:0 13px 22px #5154a533;
+  transform:rotate(-4deg)
+}
+.ui-demo .search {
+  border:1px solid #b9b6c8;
+  padding:9px 10px;
+  border-radius:7px;
+  color:#494660;
+  font-size:10px;
+  font-weight:700;
+  display:flex;
+  justify-content:space-between
+}
+.ui-demo .result {
+  margin-top:8px;
+  font-size:10px;
+  color:#5d5a80;
+  display:flex;
+  justify-content:space-between;
+  gap:9px
+}
+.ui-demo .result span {
+  background:#eeebfb;
+  padding:7px 8px;
+  border-radius:5px;
+  flex:1
+}
+.step-demo {
+  width:78%;
+  max-width:380px;
+  border-radius:13px;
+  background:#fff8f3;
+  padding:17px;
+  transform:rotate(3deg);
+  box-shadow:0 14px 25px #913a1e38
+}
+.step-demo .steps {
+  display:flex;
+  align-items:center;
+  gap:6px;
+  color:#95513a;
+  font:800 10px monospace
+}
+.step-demo .steps i {
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  background:#f0ad92;
+  display:grid;
+  place-items:center;
+  font-style:normal
+}
+.step-demo .steps .rail {
+  height:2px;
+  flex:1;
+  background:#f1d1c2
+}
+.step-demo .field {
+  height:23px;
+  border:1px solid #ecc2ae;
+  background:#fff;
+  border-radius:5px;
+  margin-top:10px
+}
+.step-demo .field.short {
+  width:67%
+}
+.project-info {
+  padding:24px 27px 27px
+}
+.project-info .project-label {
+  font:800 10px monospace;
+  color:var(--lilac);
+  letter-spacing:1.2px;
+  text-transform:uppercase
+}
+.project-info h3 {
+  margin:8px 0;
+  font-size:22px;
+  line-height:1.25;
+  letter-spacing:-.7px
+}
+.project-info p {
+  color:var(--muted);
+  font-size:12.5px;
+  line-height:1.7;
+  margin:9px 0 15px
+}
+.stack-row {
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap
+}
+.stack-row span {
+  font-size:10px;
+  color:var(--muted);
+  background:var(--bg-2);
+  border:1px solid var(--line);
+  padding:4px 8px;
+  border-radius:6px
+}
+.project-link {
+  border:0;
+  background:transparent;
+  color:var(--fg);
+  padding:0;
+  margin-top:21px;
+  font-size:12px;
+  font-weight:800;
+  display:inline-flex;
+  align-items:center;
+  gap:8px
+}
+.project-link:hover {
+  color:var(--lime)
+}

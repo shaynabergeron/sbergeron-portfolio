@@ -1,0 +1,41 @@
+/* From the original mockup, organized into a per-section Sass partial. */
+.page {
+  overflow:hidden;
+  position:relative
+}
+.hero-shell {
+  position:relative;
+  isolation:isolate;
+  overflow:hidden
+}
+.hero-shell:before {
+  content:"";
+  position:absolute;
+  z-index:-2;
+  width:850px;
+  height:850px;
+  right:-300px;
+  top:-230px;
+  background:radial-gradient(circle,#8988ce28 0,#8b87cc13 42%,transparent 70%);
+  pointer-events:none
+}
+.hero-shell:after {
+  content:"";
+  position:absolute;
+  z-index:-2;
+  width:680px;
+  height:680px;
+  left:-400px;
+  top:200px;
+  background:radial-gradient(circle,#90dc7720 0,transparent 70%);
+  pointer-events:none
+}
+.grid-pattern {
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  opacity:.17;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:linear-gradient(90deg,transparent,#000 35%,transparent 93%)
+}

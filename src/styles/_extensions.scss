@@ -1,0 +1,97 @@
+/* Extra styling for the production React implementation. Theme tokens live in _00-foundation.scss. */
+html { scroll-padding-top: 20px; }
+.header { position: relative; }
+.nav-cta, .footer-links a, .contact-mail, .project-link, .skill-tabs button > span:first-child {
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.brand-dot, .heading-period { color: var(--lime-text); }
+.heading-period { margin-left: 3px; }
+.brand-mark { flex: 0 0 auto; }
+button { touch-action: manipulation; }
+button:disabled { cursor: wait; opacity: .72; }
+.mobile-menu-button { display: none; }
+.mobile-nav { display: none; }
+.hero-copy { min-width: 0; }
+.code-line { min-height: 1.9em; }
+.code-lines { white-space: pre; }
+.code-window { color: #d9e0e4; }
+.hero .description { max-width: 510px; }
+.project-card { min-width: 0; }
+.project-info .project-link svg { transition: transform .2s ease; }
+.project-info .project-link:hover svg { transform: translate(3px, -3px); }
+.about-link { margin-top: 12px; }
+.accent-purple { color: var(--lilac); }
+.value-icon-0 { color: var(--lilac); }
+.value-icon-1 { color: var(--mint); }
+.value-icon-2 { color: var(--orange); }
+.skill-panel-top { display:flex; justify-content:space-between; align-items:center; color:var(--muted); font-size:11px; letter-spacing:1px; }
+.skill-panel-top > span:last-child { font-size:28px; color:var(--lilac); }
+.timeline-detail ul { padding-left: 18px; margin: 10px 0 14px; }
+.timeline-detail li { margin-bottom: 5px; }
+.timeline-detail .stack-row { margin-top: 16px; }
+.timeline-detail[hidden] { display:none !important; }
+.timeline-expand svg { transition:transform .2s; }
+.timeline-card.open .timeline-expand svg { transform:rotate(180deg); }
+
+/* Native <dialog> includes browser focus management and Escape handling. */
+.project-dialog { padding:0; border:0; background:transparent; color:var(--fg); max-width:min(560px,calc(100vw - 32px)); width:100%; max-height:calc(100dvh - 44px); overflow-y:auto; border-radius:22px; box-shadow:var(--shadow); }
+.project-dialog::backdrop { background:rgba(7,10,13,.76); backdrop-filter: blur(6px); }
+.project-dialog .modal { width:100%; max-width:none; background:var(--card); border:1px solid var(--line); box-shadow:none; }
+.project-dialog .modal h3 { font-size:clamp(29px,5vw,40px); }
+.modal-actions { margin-top:24px; }
+
+/* Standalone résumé CTA can be hidden or moved via site.ts. */
+.resume-band { background:var(--bg); border-bottom:1px solid var(--line); padding:40px 0; }
+.resume-layout { display:flex; align-items:center; gap:28px; }
+.resume-icon { width:72px; height:72px; border-radius:19px; background:var(--card-2); border:1px solid var(--line); display:grid; place-items:center; color:var(--lilac); flex:none; transform:rotate(-5deg); }
+.resume-copy { flex:1; }
+.resume-copy h2 { margin:9px 0 4px; font-size:clamp(22px,3vw,30px); line-height:1.15; letter-spacing:-1px; }
+.resume-copy p { color:var(--muted); font-size:12px; margin:0; }
+.resume-actions { display:flex; flex-direction:column; align-items:flex-start; gap:12px; }
+.resume-actions .text-link { font-size:12px; font-weight:700; display:flex; align-items:center; gap:5px; }
+@media(max-width:800px) { .resume-layout { flex-wrap:wrap; } .resume-actions { width:100%; flex-direction:row; align-items:center; } }
+@media(max-width:550px) { .resume-icon { width:51px; height:51px; } .resume-layout { gap:15px; } .resume-actions { flex-wrap:wrap; } }
+
+/* Optional interactive playground */
+.playground { background:var(--bg); }
+.playground-grid { display:grid; grid-template-columns:1.25fr .75fr; gap:20px; }
+.play-card { border:1px solid var(--line); border-radius:var(--radius); padding:34px; min-height:280px; overflow:hidden; position:relative; }
+.play-card-main { background: radial-gradient(circle at 80% 20%, color-mix(in srgb, var(--lime), transparent 76%), transparent 55%), var(--card); }
+.play-label { color:var(--muted); font-size:11px; font-weight:750; text-transform:uppercase; letter-spacing:1.4px; display:flex; gap:8px; align-items:center; }
+.play-big { font-weight:800; letter-spacing:-2.8px; line-height:1.1; margin:23px 0 28px; font-size:clamp(34px,5vw,58px); }
+.play-big span { color:var(--lime); margin-left:12px; }
+.play-counter { position:absolute; right:25px; bottom:22px; color:var(--muted); font-size:11px; }
+.play-card-small { background:var(--card-2); display:flex; flex-direction:column; justify-content:space-between; }
+.play-card-small > svg { color:var(--mint); }
+.play-card-small h3 { line-height:1.3; font-size:clamp(20px,2.9vw,31px); letter-spacing:-1px; position:relative; z-index:1; }
+.play-card-small em { font-family:Georgia,serif; font-weight:400; color:var(--lilac); }
+.play-asterisk { position:absolute; right:-30px; bottom:-115px; color:color-mix(in srgb,var(--lilac),transparent 82%); font-size:310px; line-height:1; pointer-events:none; }
+
+.contact-mail { font-size: clamp(12px,1.4vw,16px); overflow-wrap:anywhere; }
+.form-feedback { font-size:12px; line-height:1.5; min-height:0; display:flex; align-items:center; gap:8px; margin-top:9px; }
+.form-feedback:empty { display:none; }
+.form-feedback.is-success { color:var(--mint); }
+.form-feedback.is-error { color:var(--orange); }
+.honeypot { position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+.contact-form { position:relative; }
+
+@media (max-width: 800px) {
+  .mobile-menu-button { display:grid; }
+  .header { z-index:30; }
+  .mobile-nav { position:absolute; top:100%; left:0; width:100%; padding:8px 20px 20px; background:var(--card); border-bottom:1px solid var(--line); box-shadow:var(--shadow); flex-direction:column; gap:0; }
+  .mobile-nav.is-open { display:flex; }
+  .mobile-nav a { padding:14px 6px; display:flex; justify-content:space-between; align-items:center; font-weight:700; border-bottom:1px solid var(--line); }
+  .playground-grid { grid-template-columns:1fr; }
+}
+@media (max-width: 550px) {
+  .hero-tags { gap:6px; }
+  .hero-tags span { font-size:10px; }
+  .play-card { min-height:240px; padding:23px; }
+  .project-dialog .modal { padding:27px 20px; }
+  .header-actions .nav-cta { display:none; }
+}
+
+/* Use a darker foreground accent on light surfaces without darkening lime buttons. */
+.eyebrow, .timeline-date, .hero h1 .italic, .play-big span { color:var(--lime-text); }
+html[data-theme="light"] .form-feedback.is-success { color:#206b5f; }
+html[data-theme="light"] .form-feedback.is-error { color:#a34b25; }

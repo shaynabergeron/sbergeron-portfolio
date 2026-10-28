@@ -1,0 +1,112 @@
+/* From the original mockup, organized into a per-section Sass partial. */
+.experience {
+  background:var(--bg-2);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line)
+}
+.timeline {
+  margin-top:45px;
+  position:relative;
+  display:grid;
+  gap:14px
+}
+.timeline:before {
+  content:"";
+  position:absolute;
+  width:1px;
+  top:28px;
+  bottom:42px;
+  left:18px;
+  background:var(--line)
+}
+.timeline-item {
+  position:relative;
+  display:grid;
+  grid-template-columns:52px 1fr;
+  gap:14px
+}
+.timeline-dot {
+  position:relative;
+  z-index:1;
+  width:37px;
+  height:37px;
+  border:1px solid var(--line);
+  border-radius:50%;
+  background:var(--bg-2);
+  display:grid;
+  place-items:center;
+  margin-top:19px;
+  color:var(--muted);
+  font-size:11px
+}
+.timeline-item:first-child .timeline-dot {
+  background:var(--lime);
+  color:#151b12;
+  border-color:var(--lime)
+}
+.timeline-card {
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:var(--card);
+  padding:23px 25px;
+  transition:border .2s
+}
+.timeline-card:hover,.timeline-card.open {
+  border-color:color-mix(in srgb,var(--lilac),var(--line) 55%)
+}
+.timeline-top {
+  display:flex;
+  align-items:start;
+  justify-content:space-between;
+  gap:14px
+}
+.timeline-top h3 {
+  font-size:17px;
+  margin:3px 0 2px;
+  letter-spacing:-.4px
+}
+.timeline-top p {
+  font-size:12px;
+  color:var(--muted);
+  margin:0
+}
+.timeline-date {
+  font:700 10px monospace;
+  white-space:nowrap;
+  color:var(--lime);
+  letter-spacing:.3px;
+  margin-top:6px
+}
+.timeline-expand {
+  border:0;
+  background:transparent;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:800;
+  display:flex;
+  gap:6px;
+  align-items:center;
+  padding:14px 0 0
+}
+.timeline-expand .chevron {
+  display:inline-block;
+  transition:transform .2s
+}
+.timeline-card.open .chevron {
+  transform:rotate(180deg)
+}
+.timeline-detail {
+  display:none;
+  color:var(--muted);
+  font-size:12.5px;
+  line-height:1.8;
+  padding:13px 0 2px;
+  border-top:1px solid var(--line);
+  margin-top:15px
+}
+.timeline-card.open .timeline-detail {
+  display:block
+}
+.timeline-detail strong {
+  color:var(--fg)
+}

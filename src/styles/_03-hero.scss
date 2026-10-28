@@ -1,0 +1,117 @@
+/* From the original mockup, organized into a per-section Sass partial. */
+.hero {
+  display:grid;
+  grid-template-columns:1.06fr .94fr;
+  gap:45px;
+  min-height:650px;
+  padding-top:104px;
+  padding-bottom:87px;
+  align-items:center
+}
+.availability {
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  border:1px solid var(--line);
+  background:var(--card);
+  border-radius:100px;
+  padding:8px 13px;
+  font-size:10px;
+  font-weight:750;
+  letter-spacing:1.15px;
+  text-transform:uppercase;
+  margin-bottom:27px
+}
+.dot {
+  display:inline-block;
+  width:7px;
+  height:7px;
+  background:var(--lime);
+  border-radius:50%;
+  box-shadow:0 0 0 4px color-mix(in srgb,var(--lime),transparent 84%)
+}
+.hero h1 {
+  font-size:clamp(58px,6.1vw,87px);
+  line-height:1.015;
+  letter-spacing:-5.2px;
+  margin:0;
+  font-weight:800
+}
+.hero h1 .italic {
+  font-style:italic;
+  font-family:Georgia,serif;
+  font-weight:400;
+  letter-spacing:-4.7px;
+  color:var(--lime)
+}
+.hero h1 .spark {
+  font-style:normal;
+  font:normal .5em Georgia,serif;
+  vertical-align:top;
+  padding-left:8px;
+  color:var(--orange);
+  display:inline-block;
+  animation:wiggle 5s ease-in-out infinite
+}
+.hero .description {
+  max-width:525px;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.85;
+  margin:30px 0 26px
+}
+.hero .description strong {
+  color:var(--fg);
+  font-weight:650
+}
+.hero-tags {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:0 0 31px
+}
+.hero-tags span {
+  font-size:11px;
+  letter-spacing:.15px;
+  border:1px solid var(--line);
+  padding:6px 11px;
+  border-radius:8px;
+  background:color-mix(in srgb,var(--card),transparent 24%)
+}
+.hero-actions {
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:20px
+}
+.btn {
+  border:1px solid transparent;
+  padding:13px 20px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  border-radius:12px;
+  font-size:12px;
+  letter-spacing:.15px;
+  font-weight:750;
+  transition:transform .2s,background .2s,border .2s
+}
+.btn:hover {
+  transform:translateY(-2px)
+}
+.btn-primary {
+  background:var(--lime);
+  color:#171b16
+}
+.btn-primary:hover {
+  background:color-mix(in srgb,var(--lime),#fff 15%)
+}
+.btn-secondary {
+  color:var(--fg);
+  border-color:var(--line);
+  background:var(--card)
+}
+.btn-secondary:hover {
+  border-color:var(--lime)
+}

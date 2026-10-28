@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+# Netlify recognizes Next.js and uses its maintained OpenNext adapter automatically.
+# IMPORTANT: no static export / publish=out / catch-all SPA redirects here.
+# Set RESEND_API_KEY and RESEND_FROM_EMAIL in Netlify's Environment variables UI,
+# scoped to Functions (and Builds if your plan requires both), then redeploy.
+
+# To use a custom domain, set SITE_URL=https://your-domain.com in Netlify's
+# Environment variables (Builds scope) and redeploy for updated link previews.
+# A static public/og-image.jpg is deployed along with the Next.js app.

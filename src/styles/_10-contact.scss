@@ -1,0 +1,107 @@
+/* From the original mockup, organized into a per-section Sass partial. */
+.contact {
+  padding:103px 0
+}
+.contact-panel {
+  background:var(--lime);
+  color:#192018;
+  border-radius:27px;
+  display:grid;
+  grid-template-columns:1fr .92fr;
+  gap:40px;
+  padding:54px;
+  position:relative;
+  overflow:hidden
+}
+.contact-panel:before {
+  content:"✳";
+  font-family:Georgia,serif;
+  font-size:270px;
+  position:absolute;
+  left:-35px;
+  bottom:-132px;
+  line-height:1;
+  color:#374c2420;
+  pointer-events:none
+}
+.contact-cta {
+  z-index:1;
+  position:relative
+}
+.contact-cta .eyebrow {
+  color:#3a502e
+}
+.contact-cta h2 {
+  margin:18px 0 15px;
+  font-size:clamp(42px,5vw,63px)
+}
+.contact-cta p {
+  font-size:13px;
+  line-height:1.85;
+  max-width:355px;
+  color:#3c5136
+}
+.contact-mail {
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-top:29px;
+  border-bottom:1px solid #5f7644;
+  padding-bottom:7px;
+  font-weight:800;
+  font-size:13px;
+  word-break:break-all
+}
+.contact-form {
+  z-index:1;
+  position:relative;
+  background:#fbfcf6;
+  border:1px solid #d5e4c3;
+  color:#242d1f;
+  border-radius:18px;
+  padding:24px;
+  display:grid;
+  gap:12px
+}
+.form-pair {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px
+}
+.contact-form label {
+  font-size:10px;
+  font-weight:800;
+  display:block;
+  margin-bottom:5px;
+  letter-spacing:.4px
+}
+.contact-form input,.contact-form textarea {
+  background:#fff;
+  color:#222;
+  border:1px solid #d7ded1;
+  border-radius:9px;
+  padding:10px 12px;
+  width:100%;
+  font-size:12px
+}
+.contact-form textarea {
+  resize:vertical;
+  min-height:98px
+}
+.contact-form button {
+  border:0;
+  background:#202820;
+  color:#fff;
+  border-radius:10px;
+  padding:13px 16px;
+  font-weight:800;
+  font-size:12px
+}
+.contact-form button:hover {
+  background:#354333
+}
+.form-hint {
+  font-size:10px;
+  color:#66745b;
+  margin:0
+}

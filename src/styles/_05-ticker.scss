@@ -1,0 +1,38 @@
+/* From the original mockup, organized into a per-section Sass partial. */
+.ticker {
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:var(--bg-2)
+}
+.ticker-inner {
+  min-height:68px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px
+}
+.ticker-label {
+  font-size:9px;
+  color:var(--muted);
+  letter-spacing:1.5px;
+  font-weight:800;
+  white-space:nowrap
+}
+.ticker-items {
+  display:flex;
+  gap:26px;
+  justify-content:space-between;
+  flex:1;
+  margin-left:30px
+}
+.ticker-items span {
+  font-size:11px;
+  letter-spacing:.8px;
+  font-weight:750;
+  white-space:nowrap
+}
+.ticker-items span b {
+  color:var(--lime);
+  font-size:15px;
+  padding-right:8px
+}
