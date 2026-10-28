@@ -1,4 +1,4 @@
-# Shayna Bergeron — Portfolio
+# Shayna Bergeron Developer Portfolio
 
 A personal developer portfolio built with Next.js, React, TypeScript, and Sass. It includes sections for projects, skills, experience, résumé, and contact.
 
