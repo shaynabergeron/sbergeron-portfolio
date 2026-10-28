@@ -18,9 +18,9 @@ describe("contact validation", () => {
   it("marks honeypot submissions as spam", () => {
     expect(validateContact({ ...valid, website: "http://example.com" })).toMatchObject({ valid: true, spam: true });
   });
-  it("formats plain-text email body safely", () => {
-    const result = validateContact(valid);
+  it.each([valid.email, "alex@example.com"])("formats plain-text email body with the submitted email %s", (email) => {
+    const result = validateContact({ ...valid, email });
     if (!result.valid) throw new Error("Expected valid payload");
-    expect(formatEmailText(result.data)).toContain("Email: alex@example.com");
+    expect(formatEmailText(result.data)).toContain(`Email: ${email}`);
   });
 });
